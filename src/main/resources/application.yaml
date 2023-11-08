@@ -16,6 +16,12 @@ spring:
     password: '12345'
     username: 'root'
     url: jdbc:mysql://localhost:3306/myPlannerApp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+  thymeleaf:
+    prefix: classpath:/test/
+    check-template: true
+    check-template-location: true
+    enabled: true
+    suffix: '.html'
 logging:
   level:
     org:
@@ -27,4 +33,6 @@ logging:
     blog: WARN
 server:
   port: 8080
+
+
 
