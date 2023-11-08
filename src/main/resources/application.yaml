@@ -14,7 +14,7 @@ spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     username: 'root'
-    password: 'Qniivon1*'
+    password: 'root'
     url: jdbc:mysql://localhost:3306/myPlannerApp?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
   thymeleaf:
     prefix: classpath:/templates/
