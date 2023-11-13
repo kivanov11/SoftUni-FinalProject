@@ -1,21 +1,17 @@
 package com.plannerapp.myplannerproject.model.binding;
 
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-
-public class UserRegisterBindingModel {
+public class UserLoginBindingModel {
 
     private String username;
-    private String email;
     private String password;
-    private String confirmPassword;
 
-    public UserRegisterBindingModel() {
+    public UserLoginBindingModel() {
     }
 
-
+    @NotBlank(message = "Username cannot be empty!")
     @Size(min = 3, max = 20, message = "Username length must be at least 3 characters!")
     public String getUsername() {
         return username;
@@ -25,15 +21,7 @@ public class UserRegisterBindingModel {
         this.username = username;
     }
 
-    @Email
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+    @NotBlank(message = "Password cannot be empty!")
     @Size(min = 3, max = 20, message = "Password length must be at least 3 characters!")
     public String getPassword() {
         return password;
@@ -42,13 +30,4 @@ public class UserRegisterBindingModel {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
 }
-

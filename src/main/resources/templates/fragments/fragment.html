@@ -28,9 +28,9 @@
                         <a th:if="${session.user == null}" class="nav-link text-white active h5" href="/login">Login</a>
                     </li>
                 </th:block>
-                <li class="nav-item col-md-4">
-                    <a th:if="${session.user != null}" class="nav-link text-white active h5" href="/logout">Logout</a>
-                </li>
+                        <li class="nav-item col-md-4">
+                            <a th:if="${session.user != null}" class="nav-link text-white active h5" href="/logout">Logout</a>
+                        </li>
 
             </ul>
         </div>
