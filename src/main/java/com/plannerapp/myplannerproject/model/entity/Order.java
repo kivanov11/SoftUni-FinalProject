@@ -6,6 +6,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "orders")
@@ -15,8 +16,8 @@ public class Order extends BaseEntity{
     private String name;
     private String description;
     private BigDecimal price;
+    private LocalDateTime orderTime;
     private Category category;
-
 
     public Order() {
     }
@@ -54,4 +55,14 @@ public class Order extends BaseEntity{
     public void setCategory(Category category) {
         this.category = category;
     }
+
+
+    public LocalDateTime getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(LocalDateTime orderTime) {
+        this.orderTime = orderTime;
+    }
+
 }

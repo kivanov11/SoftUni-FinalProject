@@ -4,9 +4,11 @@ import com.plannerapp.myplannerproject.model.entity.Category;
 import com.plannerapp.myplannerproject.model.enums.CategoryName;
 import com.plannerapp.myplannerproject.repository.CategoryRepository;
 import com.plannerapp.myplannerproject.service.CategoryService;
+import org.springframework.expression.spel.support.ReflectivePropertyAccessor;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -39,5 +41,12 @@ public class CategoryServiceImpl implements CategoryService {
                     });
         }
 
+    @Override
+    public Category findByCategoryEnum(CategoryName categoryName) {
+
+
+        return categoryRepository.findByName(categoryName).orElse(null);
     }
+
+}
 

@@ -1,25 +1,33 @@
-package com.plannerapp.myplannerproject.model.binding;
+package com.plannerapp.myplannerproject.model.service;
 
 import com.plannerapp.myplannerproject.model.entity.Category;
-import jakarta.validation.constraints.*;
-import org.springframework.format.annotation.DateTimeFormat;
+import com.plannerapp.myplannerproject.model.entity.User;
+import com.plannerapp.myplannerproject.model.enums.CategoryName;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class OrderAddBindingModel {
+public class OrderServiceModel {
 
+    private Long id;
     private String name;
     private String description;
     private BigDecimal price;
     private LocalDateTime orderTime;
-    private Category category;
+    private CategoryName category;
 
-    public OrderAddBindingModel() {
+
+    public OrderServiceModel() {
     }
 
-    @Size(min = 3,max = 20)
-    @NotNull
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -28,8 +36,6 @@ public class OrderAddBindingModel {
         this.name = name;
     }
 
-
-    @Size(min = 5)
     public String getDescription() {
         return description;
     }
@@ -38,7 +44,6 @@ public class OrderAddBindingModel {
         this.description = description;
     }
 
-    @Positive
     public BigDecimal getPrice() {
         return price;
     }
@@ -46,17 +51,7 @@ public class OrderAddBindingModel {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
-    @NotNull
-    public Category getCategory() {
-        return category;
-    }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    @PastOrPresent
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     public LocalDateTime getOrderTime() {
         return orderTime;
     }
@@ -64,4 +59,15 @@ public class OrderAddBindingModel {
     public void setOrderTime(LocalDateTime orderTime) {
         this.orderTime = orderTime;
     }
+
+
+    public CategoryName getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryName category) {
+        this.category = category;
+    }
+
+
 }

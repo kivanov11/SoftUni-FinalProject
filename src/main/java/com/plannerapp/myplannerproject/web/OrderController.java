@@ -1,9 +1,10 @@
 package com.plannerapp.myplannerproject.web;
 
 import com.plannerapp.myplannerproject.model.binding.OrderAddBindingModel;
-import jakarta.persistence.Column;
+import com.plannerapp.myplannerproject.model.service.OrderServiceModel;
+import com.plannerapp.myplannerproject.service.OrderService;
 import jakarta.validation.Valid;
-import org.hibernate.metamodel.mapping.Bindable;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class OrderController {
+
+    private final OrderService orderService;
+    private final ModelMapper modelMapper;
+
+    public OrderController(OrderService orderService, ModelMapper modelMapper) {
+        this.orderService = orderService;
+        this.modelMapper = modelMapper;
+    }
+
+
     @GetMapping("/order")
     public String order(){
         return "order-add";
@@ -30,8 +41,12 @@ public class OrderController {
             return "redirect:order";
         }
 
+        orderService.addOrder(modelMapper.map(orderAddBindingModel, OrderServiceModel.class));
+
         return "redirect:/";
     }
+
+
 
 
     @ModelAttribute
