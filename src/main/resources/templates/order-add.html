@@ -75,7 +75,9 @@
                         <select th:field="*{category}" th:errorclass="is-invalid" id="category" name="category" class="custom-select"
                                 aria-describedby="categoryHelpInline">
                             <option value="" selected>Category</option>
-                            <option th:each="c : ${T(com.plannerapp.myplannerproject.model.enums.CategoryName).values()}" th:value="${c}" th:text="${c}">Weekly Planner</option>
+                            <option th:each="enumValue : ${T(com.plannerapp.myplannerproject.model.enums.CategoryName).values()}"
+                                    th:value="${enumValue}"
+                                    th:text="${enumValue}">Weekly Planner</option>
 
                         </select>
                         <small id="categoryHelpInline" class="invalid-feedback bg-danger text-light rounded">

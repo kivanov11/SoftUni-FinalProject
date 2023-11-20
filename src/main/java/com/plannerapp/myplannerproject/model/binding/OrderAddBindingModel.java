@@ -13,7 +13,7 @@ public class OrderAddBindingModel {
     private String description;
     private BigDecimal price;
     private LocalDateTime orderTime;
-    private Category category;
+    private String category;
 
     public OrderAddBindingModel() {
     }
@@ -47,11 +47,11 @@ public class OrderAddBindingModel {
         this.price = price;
     }
     @NotNull
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
