@@ -1,310 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<html xmlns:th="http://www.thymeleaf.org" > >
-<html>
-<head th:replace="fragments/fragment :: head"></head>
+<html xmlns:th="http://www.thymeleaf.org" >
+<html lang="en">
+<head>
+    <title>Planner The Dreamer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+        }
+
+        /* Remove the jumbotron's default bottom margin */
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
+</head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Welcome!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Welcome!</h1>
+        <p> The Dreamer! </p>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contacts">Contacts</a>
-                    </li>
-                    <li class="nav-item col-md-4">
-                        <a th:if="${session.user != null}" class="nav-link text-black-50 active h4" href="/logout">Logout</a>
-                    </li>
-                </ul>
+            <a class="navbar-brand" href="/index">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/contacts">Contact</a></li>
+<!--                <li><a href="#">Products</a></li>-->
+<!--                <li><a href="#">Deals</a></li>-->
+<!--                <li><a href="#">Stores</a></li>-->
+<!--                <li><a href="#">Contact</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+<!--                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>-->
+                <li><a th:if="${session.user != null}" href="/logout"><span class="glyphicon"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
-    </nav>
-
-</header>
-
-<main class="_content">
-    <div class="_grid-row" style="padding-top: 30px; padding-bottom: 30px; margin-top: 0px; margin-bottom: 0px; padding-left: 0px; padding-right: 0px;margin-left: 0px; margin-right: 0px;"><div class="container"><div class="row"><div class="col-md-12"></div></div></div></div><div class="_grid-row" style="padding-top: 30px; padding-bottom: 30px; margin-top: 0px; margin-bottom: 0px; padding-left: 0px; padding-right: 0px;margin-left: 0px; margin-right: 0px;"><div class="container"><div class="row"><div class="col-md-12"><div class="_grid-section">
-    <div class="_slider js-slider _has-helper">
-        <div class="slides js-slides"
-             data-interval="5000"
-             data-pause="true"
-             data-dots="false"
-             data-nav="false"
-             data-autoplay="true"
-             data-cycle="false"
-             data-rtl="false"
-             data-animate-in="false"
-             data-animate-out="false"
-             data-items="1">
-
-            <div class="slide js-slide slide-link current" data-href="/page/produkti" data-target="_self" itemscope itemtype="https://schema.org/ImageObject">
-						                    <span class="slide-image" title="">
-	                        																								<picture>
-									<!--[if IE 9]><audio><![endif]-->
-                                                                                                                                <source media="(max-width: 1024px)" srcset="https://cdncloudcart.com/12912/files/image/1200x628-653f6e4c49d04.png">
-									<source srcset="https://cdncloudcart.com/12912/files/image/1200x628-653f6e4c49d04.png">
-                                                                                                                                <!--[if IE 9]></audio><![endif]-->
-                                                                                                                                <img alt="" src="https://cdncloudcart.com/12912/files/image/1200x628-653f6e4c49d04.png">
-								</picture>
-																					</span>
-
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
-
-        <div class="loader-container">
-            <div class="loader">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="col-sm-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>
+    </div>
+</div><br>
 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+            </div>
+        </div>
     </div>
-</div></div></div></div></div><div class="_grid-row" style="padding-top: 30px; padding-bottom: 30px; margin-top: 0px; margin-bottom: 0px; padding-left: 0px; padding-right: 0px;margin-left: 0px; margin-right: 0px;"><div class="container"><div class="row"><div class="col-md-12"><div class="_grid-section">    <div class="_text ">
-    <div class="_text-title _text-title-empty">
-    </div>
-    <div class="_text-description">
-        <p class="text-aligncenter"><span style="font-size: 12pt;"><strong>Открийте нашите продукти</strong></span></p>
-        <p class="text-aligncenter"><span>&nbsp;След дългогодишни проучвания и опита, който придобихме, разработихме специално за ТЕБ този уникален планер, с който ще улесниш живота си!&nbsp;</span><span>Планерът съдържа голям набор от готови шаблони и списъци, които се попълват с лекота и така не пропускаш твоите ангажименти и задачки.&nbsp;</span><span>Освен всичко това, планерът е първият в България с авторско съдържание и висок клас на изработка, който се отличава от много други планери на пазара.&nbsp;</span></p>
-    </div>
-</div>
-</div></div></div></div></div><div class="_grid-row" style="padding-top: 30px; padding-bottom: 30px; margin-top: 0px; margin-bottom: 0px; padding-left: 0px; padding-right: 0px;margin-left: 0px; margin-right: 0px;"><div class="container"><div class="row"><div class="col-md-6"><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/every-moment" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/izdanie-na-balgarski-ezik-12.png" alt="" title="">
+</div><br><br>
 
-                </a>
-            </div>							</div>
+<footer th:fragment="footer" class="footer bg-transparent  py-2">
+    <div class="container-fluid text-center">
+        <div class="footer-background h5 text-white">
+            &copy; The Dreamer Bulgaria 2023. All rights reserved.
+        </div>
     </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="/order" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/planer-dream-it" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/8-63dd02dba7ae7.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/planer-dream-it" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/planer-stay" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/6-63dd0396c6bab.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/planer-stay" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/chitatelski-dnevnik-1" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/izdanie-na-balgarski-ezik-15.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/chitatelski-dnevnik-1" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/dnevnik-moyata-bremennost" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/23.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/dnevnik-moyata-bremennost" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div></div><div class="col-md-6"><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/my-planner" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/izdanie-na-balgarski-ezik-11.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/my-planner" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/daily" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/5-63dd02c60d4cd.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/daily" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/good-vibes" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/7-63dd02fbc8a0c.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/good-vibes" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/svatben-planer-1" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/12-6433c08fd608f.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/svatben-planer-1" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <a class="_banner-image" href="/product/tetradka-za-retsepti" target="_self">
-                    <img src="https://cdncloudcart.com/12912/files/image/11-6433c0bd2becb.png" alt="" title="">
-
-                </a>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="text-center">
-    <a href="https://plannerbg.com/product/tetradka-za-retsepti" class="_button   "  >
-            <span class="_figure-stack">
-                <span class="_figure-stack-label">
-                    КУПИ ТУК
-                </span>
-            </span>
-    </a>
-</div>
-</div></div></div></div></div><div class="_grid-row" style="padding-top: 30px; padding-bottom: 30px; margin-top: 0px; margin-bottom: 0px; padding-left: 0px; padding-right: 0px;margin-left: 0px; margin-right: 0px;"><div class="container"><div class="row"><div class="col-md-12"><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <div class="_banner-image" >
-                    <img src="https://cdncloudcart.com/12912/files/image/v-ramkite-na-3-rabotni-dni-3.png" alt="" title="">
-
-                </div>
-            </div>							</div>
-    </div>
-</div><div class="_grid-section">    <div class="_text ">
-    <div class="_text-title _text-title-empty">
-    </div>
-    <div class="_text-description">
-        <p class="text-aligncenter"><span style="font-size: 14pt;"><strong>Отзиви от нашите прекрасни клиенти</strong></span></p>
-    </div>
-</div>
-</div><div class="_grid-section">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <div class="_banner-image" >
-                    <img src="https://cdncloudcart.com/12912/files/image/v-ramkite-na-3-rabotni-dni-2.png" alt="" title="">
-
-                </div>
-            </div>							</div>
-    </div>
-<div>
-
-
-</main>
-<footer th:replace="fragments/fragment :: footer">
 </footer>
-</body>
-</html>

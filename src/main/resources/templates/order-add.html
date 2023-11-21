@@ -6,35 +6,14 @@
 
 <body class="bg-secondary">
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-info rounded">
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/static">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/static">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/static">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/static">Add Order</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/static">Logout</a>
-                </li>
-            </ul>
-            <img width="50px" src="/images/coffee.png" alt="Coffee image">
-        </div>
-    </nav>
+
 </header>
 <main role="main" class="bg-secondary">
 
     <div class="jumbotron">
         <div class="container text-light ">
             <h1 class="display-3 ">
-                <strong class="bg-blur rounded border-left border-white pl-3 border-bottom">Add Order</strong></h1>
+                <strong class="bg-blur rounded border-left border-white pl-3 border-bottom">Complete Order:</strong></h1>
         </div>
         <div class="container bg-blur rounded p-5 mt-5 w-75">
             <form th:action="@{/order}" th:method="POST" th:object="${orderAddBindingModel}"

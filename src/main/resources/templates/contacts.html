@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .contact-info i {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
+    <h1>Contact Us</h1>
+
+    <div class="contact-info">
+        <p><i class="fa fa-map-marker"></i>Yordan Stratiev 4A, Sofia, Bulgaria</p>
+        <p><i class="fa fa-phone"></i>Phone: +359 89 77 69541</p>
+        <p><i class="fa fa-envelope"></i>Email: kivanov11@abv.bg</p>
+    </div>
+    <footer th:fragment="footer" class="footer bg-transparent  py-2">
+        <div class="container-fluid text-center">
+            <div class="footer-background h5 text-white">
+                &copy; The Dreamer Bulgaria 2023. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
 
 </body>
 </html>
