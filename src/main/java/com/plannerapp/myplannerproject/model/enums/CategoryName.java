@@ -2,5 +2,5 @@ package com.plannerapp.myplannerproject.model.enums;
 
 public enum CategoryName {
 
-    WEEKLY_PLANNER, WEDDING_PLANNER, DIGITAL_PLANNER
+    EVERY_MOMENT, MY_PLANNER, DREAM_IT, DAILY , STAY_FEARLEESS , GOOD_VIBES
 }

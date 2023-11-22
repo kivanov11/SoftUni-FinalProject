@@ -1,5 +1,6 @@
 package com.plannerapp.myplannerproject.web;
 
+
 import com.plannerapp.myplannerproject.model.binding.UserLoginBindingModel;
 import com.plannerapp.myplannerproject.model.binding.UserRegisterBindingModel;
 import com.plannerapp.myplannerproject.model.service.UserServiceModel;
@@ -62,10 +63,9 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(Model model) {
-
-        if(!model.containsAttribute("userLoginBindingModel")){
-            model.addAttribute("userLoginBindingModel" , new UserLoginBindingModel());
-            model.addAttribute("notFound" , false);
+         if(!model.containsAttribute("userLoginBindingModel")) {
+            model.addAttribute("userLoginBindingModel", new UserLoginBindingModel());
+            model.addAttribute("notFound", false);
         }
         return "login";
 
@@ -81,37 +81,36 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel", bindingResult);
-
             return "redirect:login";
         }
 
         UserServiceModel userServiceModel = userService.findByUserNameAndPassword(userLoginBindingModel.getUsername(), userLoginBindingModel.getPassword());
 
-        if(userServiceModel == null){
-            redirectAttributes.addFlashAttribute("userLoginBindingModel" , userLoginBindingModel);
-            redirectAttributes.addFlashAttribute("notFound",true);
+        if (userServiceModel == null) {
+            redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes.addFlashAttribute("notFound", true);
             return "redirect:login";
         }
 
-        httpSession.setAttribute("user" , userServiceModel);
+        httpSession.setAttribute("user", userServiceModel);
 
         return "redirect:/";
 
     }
 
     @GetMapping("/logout")
-    public String logout(HttpSession httpSession){
+    public String logout(HttpSession httpSession) {
         httpSession.invalidate();
 
         return "redirect:/";
     }
 
 
-
     @ModelAttribute
     public UserRegisterBindingModel userRegisterBindingModel() {
         return new UserRegisterBindingModel();
     }
+
 
     @ModelAttribute
     public UserLoginBindingModel userLoginBindingModel() {
