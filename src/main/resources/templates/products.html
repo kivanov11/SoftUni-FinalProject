@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org" >
 <html lang="en">
 <head>
-    <title>Home</title>
+    <title>Products</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,20 +11,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/style.css"/>
 
-<!--            margin-bottom: 50px;-->
-<!--            border-radius: 0;-->
-<!--        }-->
+    <!--            margin-bottom: 50px;-->
+    <!--            border-radius: 0;-->
+    <!--        }-->
 
-<!--        /* Remove the jumbotron's default bottom margin */-->
-<!--        .jumbotron {-->
-<!--            margin-bottom: 0;-->
-<!--        }-->
+    <!--        /* Remove the jumbotron's default bottom margin */-->
+    <!--        .jumbotron {-->
+    <!--            margin-bottom: 0;-->
+    <!--        }-->
 
-<!--        /* Add a gray background color and some padding to the footer */-->
-<!--        footer {-->
-<!--            background-color: #f2f2f2;-->
-<!--            padding: 25px;-->
-<!--        }-->
+    <!--        /* Add a gray background color and some padding to the footer */-->
+    <!--        footer {-->
+    <!--            background-color: #f2f2f2;-->
+    <!--            padding: 25px;-->
+    <!--        }-->
     </style>
 </head>
 <body>
@@ -42,71 +42,46 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/products">Products</a></li>
                 <li><a href="/contacts">Contacts</a></li>-->
-<!--                <li><a href="#">Deals</a></li>-->
-<!--                <li><a href="#">Stores</a></li>-->
-<!--                <li><a href="#">Contact</a></li>-->
+                <!--                <li><a href="#">Products</a></li>-->
+                <!--                <li><a href="#">Deals</a></li>-->
+                <!--                <li><a href="#">Stores</a></li>-->
+                <!--                <li><a href="#">Contact</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-<!--                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>-->
+                <!--                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>-->
                 <li><a th:if="${session.user != null}" href="/logout"><span class="glyphicon"></span> Logout</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="_grid-row" style="padding-top: 30px; padding-bottom: 30px; margin-top: 0px; margin-bottom: 0px; padding-left: 0px; padding-right: 0px;margin-left: 0px; margin-right: 0px;"><div class="container"><div class="row"><div class="col-md-12"><div class="_grid-section">
-    <div class="_slider js-slider _has-helper slider-loaded no-slider">
-        <div class="slides js-slides" data-interval="5000" data-pause="true" data-dots="false" data-nav="false" data-autoplay="true" data-cycle="false" data-rtl="false" data-animate-in="false" data-animate-out="false" data-items="1">
-
-            <div class="slide js-slide slide-link current" data-href="localhost:8080/products" data-target="_self" itemscope="" itemtype="https://schema.org/ImageObject">
-						                    <span class="slide-image" title="">
-	                        																								<picture>
-									<!--[if IE 9]><audio><![endif]-->
-                                                                                                                                <source media="(max-width: 1024px)" srcset="https://cdncloudcart.com/12912/files/image/plannerbg_black_friday_1200x628.png">
-									<source srcset="https://cdncloudcart.com/12912/files/image/plannerbg_black_friday_1200x628.png">
-                                                                                                                                <!--[if IE 9]></audio><![endif]-->
-                                                                                                                                <img alt="" src="https://cdncloudcart.com/12912/files/image/plannerbg_black_friday_1200x628.png">
-								</picture>
-																					</span>
-
-            </div>
-        </div>
-
-        <div class="loader-container">
-            <div class="loader">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>The Dreamer!</h1>
+        <p>PRODUCTS</p>
     </div>
-</div></div></div></div></div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">Every Moment</div>
                 <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/79/planer-my-planner-copy-64199eda87c38_1280x1280.png?1679400692" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer"><p><a href="/products">BUY NOW</a></p></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a> <span class="price">49.99$</span></p></div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-danger">
                 <div class="panel-heading">My Planner</div>
                 <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/78/planer-daily-copy-64199e431cc13_1280x1280.png?1679400598" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer"><p><a href="/products">BUY NOW</a></p></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a> <span class="price">59.99$</span></p></div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-success">
                 <div class="panel-heading">Dream It</div>
                 <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/18/planer-do-it-for-you-63dd00f7e553a_1280x1280.png?1675428121" style="width:100%" alt="Image"></div>
-                <div class="panel-footer"><p><a href="/products">BUY NOW</a></p></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a> <span class="price">69.99$</span></p></div>
             </div>
         </div>
     </div>
@@ -118,37 +93,51 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Daily</div>
                 <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/61/planer-this-girl-can-63dd000ed2d7c_1280x1280.png?1675427886" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer"><p><a href="/products">BUY NOW</a></p></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a> <span class="price">39.99$</span></p></div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-danger">
                 <div class="panel-heading">Stay Fearless</div>
                 <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/17/planer-dream-plan-do-63dd013cb2801_1280x1280.png?1675428186" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer"><p><a href="/products">BUY NOW</a> </p></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a>  <span class="price">59.99$</span></p></div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-success">
                 <div class="panel-heading">Good Vibes</div>
                 <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/60/planer-do-all-things-with-love-63dd009def658_1280x1280.png?1675428029 " class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer"><p><a href="/products">BUY NOW</a></p></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a>  <span class="price">49.99$</span></p></div>
             </div>
         </div>
     </div>
 </div><br><br>
 
-<div class="col-md-12"><div class="_grid-section">
-    <div style="width:1000px; margin:0 auto;">
-    <div class="_banners _banners-wrap-1 _has-helper">
-        <div class="_banners-list _banners-count-1 ">
-            <div class="_banner full">
-                <div class="_banner-image">
-                    <img src="https://cdncloudcart.com/12912/files/image/v-ramkite-na-3-rabotni-dni-3.png" alt="" title="">
-
-                </div>
-            </div>							</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Recipes Book</div>
+                <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/29/kniga-za-domasni-recepti-6433bfed17fe1_1280x1280.png?1681113568" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a> <span class="price">29.99$</span></p></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Reading Diary</div>
+                <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/80/svatben-planer-copy-6494517a4096c_1280x1280.png?1687441823" class="img-responsive" style="width:100%" alt="Image"></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a> <span class="price">59.99$</span></p></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">My Wedding Planner</div>
+                <div class="panel-body"><img src="https://cdncloudcart.com/12912/products/images/77/svatben-planer-6433c324ddaa4_1280x1280.png?1681113973" style="width:100%" alt="Image"></div>
+                <div class="panel-footer"><p><a href="/order">ORDER NOW</a> <span class="price">89.99$</span></p></div>
+            </div>
+        </div>
     </div>
+</div><br><br>
 
 <footer th:fragment="footer" class="footer bg-transparent  py-2">
     <div class="container-fluid text-center">

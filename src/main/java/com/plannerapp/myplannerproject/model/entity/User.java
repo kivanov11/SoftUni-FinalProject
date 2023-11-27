@@ -40,7 +40,7 @@ public class User extends BaseEntity {
     }
 
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true,nullable = false)
     @Email
     public String getEmail() {
         return email;
