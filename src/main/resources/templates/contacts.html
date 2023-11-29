@@ -1,50 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            background-image: url("static/img/background.jpg");
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding-top: 50px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .contact-info {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-        .contact-info i {
-            margin-right: 5px;
-        }
-    </style>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" >
+
+<head th:replace="fragments/fragment :: head"></head>
 <body>
-
-<div class="container">
-    <h1>Contact Us</h1>
-
-    <div class="contact-info">
-        <p><i class="fa fa-map-marker"></i>Yordan Stratiev 4A, Sofia, Bulgaria</p>
-        <p><i class="fa fa-phone"></i>Phone: +359 89 77 69541</p>
-        <p><i class="fa fa-envelope"></i>Email: kivanov11@abv.bg</p>
+<header >
+    <a class="nav-link text-white active h5" href="/">Planners The Dreamer!</a>
+</header>
+<main>
+    <div class="container bg-blur rounded mt-5 ">
+        <h1>Contact Us</h1>
+        <p class="h4">Yordan Stratiev 4A, Sofia, Bulgaria</p>
+        <p class="h3">Phone: +359 89 77 69541</p>
+        <p class="h3">Email: kivanov11@abv.bg</p>
+        </h2>
+    </div>
+    </h3>
     </div>
 
-
+</main>
+<footer th:replace="fragments/fragment :: footer">
+</footer>
 </body>
 </html>
