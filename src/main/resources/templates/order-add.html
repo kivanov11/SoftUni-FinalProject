@@ -13,47 +13,27 @@
     <div class="jumbotron">
         <div class="container text-light ">
             <h1 class="display-4  ">
-                <strong class="bg-blur rounded border-left border-white pl-3 border-bottom">Complete Order:</strong></h1>
+                <strong class="bg-blur rounded border-left border-white pl-3 border-bottom">Завърши поръчката:</strong></h1>
         </div>
         <div class="container bg-blur rounded p-5 mt-5 w-75">
             <form th:action="@{/order}" th:method="POST" th:object="${orderAddBindingModel}"
                   class=" text-center text-light">
                 <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <label for="name" class="col-sm-2 col-form-label">Име</label>
                     <div class="col-sm-10">
                         <input th:field="*{name}" th:errorclass="is-invalid" type="text" class="form-control" id="name"
-                               aria-describedby="nameHelpInline" placeholder="Name">
+                               aria-describedby="nameHelpInline" placeholder="Име">
                         <small id="nameHelpInline" class="invalid-feedback bg-danger text-light rounded">
-                            Name must be between 3 and 20 characters.
+                            Името трябва да е между 3 и 20 символа.
                         </small>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="price" class="col-sm-2 col-form-label">Price</label>
-                    <div class="col-sm-10">
-                        <input th:field="*{price}" th:errorclass="is-invalid" type="number" step="1" class="form-control" id="price"
-                               aria-describedby="priceHelpInline">
-                        <small id="priceHelpInline" class="invalid-feedback bg-danger text-light rounded">
-                            Price must be positive.
-                        </small>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="orderTime" class="col-sm-2 col-form-label">Order time</label>
-                    <div class="col-sm-10">
-                        <input th:field="*{orderTime}" th:errorclass="is-invalid" type="datetime-local" class="form-control" id="orderTime"
-                               aria-describedby="orderTimeHelpInline">
-                        <small id="orderTimeHelpInline" class="invalid-feedback bg-danger text-light rounded">
-                            Order time cannot be in the future.
-                        </small>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="category" class="col-sm-2 col-form-label">Category</label>
+                    <label for="category" class="col-sm-2 col-form-label">Продукт</label>
                     <div class="col-sm-10">
                         <select th:field="*{category}" th:errorclass="is-invalid" id="category" name="category" class="custom-select"
                                 aria-describedby="categoryHelpInline">
-                            <option value="" selected>Category</option>
+                            <option value="" selected>Продукт</option>
                             <option th:each="enumValue : ${T(com.plannerapp.myplannerproject.model.enums.CategoryName).values()}"
                                     th:value="${enumValue}"
                                     th:text="${enumValue}">Every Moment</option>
@@ -62,23 +42,61 @@
 
                         </select>
                         <small id="categoryHelpInline" class="invalid-feedback bg-danger text-light rounded">
-                            You must select the category.
+                            Изберете продукт:
                         </small>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Description</label>
+                    <label for="price" class="col-sm-2 col-form-label">Цена</label>
+                    <div class="col-sm-10">
+                        <input th:field="*{price}" th:errorclass="is-invalid" type="text" class="form-control" id="price"
+                               aria-describedby="priceHelpInline" pattern="[0-9]+(\.[0-9]+)?" title="Цената трябва да е позитивно число">
+                        <small id="priceHelpInline" class="invalid-feedback bg-danger text-light rounded">
+                            Цената трябва да е позитивно десетично число.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="orderTime" class="col-sm-2 col-form-label">Време на поръчка</label>
+                    <div class="col-sm-10">
+                        <input th:field="*{orderTime}" th:errorclass="is-invalid" type="datetime-local" class="form-control" id="orderTime"
+                               aria-describedby="orderTimeHelpInline">
+                        <small id="orderTimeHelpInline" class="invalid-feedback bg-danger text-light rounded">
+                           Времето на поръчка,не може да бъде в бъдещето!
+                        </small>
+                    </div>
+                </div>
+<!--                <div class="form-group row">-->
+<!--                    <label for="category" class="col-sm-2 col-form-label">Продукт</label>-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <select th:field="*{category}" th:errorclass="is-invalid" id="category" name="category" class="custom-select"-->
+<!--                                aria-describedby="categoryHelpInline">-->
+<!--                            <option value="" selected>Продукт</option>-->
+<!--                            <option th:each="enumValue : ${T(com.plannerapp.myplannerproject.model.enums.CategoryName).values()}"-->
+<!--                                    th:value="${enumValue}"-->
+<!--                                    th:text="${enumValue}">Every Moment</option>-->
+
+
+
+<!--                        </select>-->
+<!--                        <small id="categoryHelpInline" class="invalid-feedback bg-danger text-light rounded">-->
+<!--                            Изберете продукт:-->
+<!--                        </small>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="form-group row">
+                    <label for="description" class="col-sm-2 col-form-label">Описание и адрес за доставка</label>
                     <div class="col-sm-10">
                     <textarea th:field="*{description}" th:errorclass="is-invalid" class="form-control" id="description"
-                              aria-describedby="descriptionHelpInline" placeholder="Description">
+                              aria-describedby="descriptionHelpInline" placeholder="Описание и адрес за доставка(офис Еконт или Спиди)">
                     </textarea>
                         <small  id="descriptionHelpInline" class="invalid-feedback bg-danger text-light rounded">
-                            The description must be more than 5 characters.
+                            Описанието трябва да бъде поне 5 символа.
                         </small>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-info w-50">Order</button>
+                <button type="submit" class="btn btn-info w-50"><a class="order-now-link" href="/success">ПОРЪЧАЙ</a></button>
             </form>
             <hr class="bg-light">
         </div>

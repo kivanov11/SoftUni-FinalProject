@@ -43,7 +43,7 @@ public class OrderController {
 
         orderService.addOrder(modelMapper.map(orderAddBindingModel, OrderServiceModel.class));
 
-        return "redirect:/";
+        return "redirect:/success";
     }
 
 

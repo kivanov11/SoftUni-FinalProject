@@ -15,7 +15,7 @@ public class Order extends BaseEntity{
 
     private String name;
     private String description;
-    private BigDecimal price;
+    private double price;
     private LocalDateTime orderTime;
     private Category category;
 
@@ -38,14 +38,14 @@ public class Order extends BaseEntity{
     public void setDescription(String description) {
         this.description = description;
     }
-    @Column(nullable = false)
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
+//    @Column(nullable = false)
+//    public BigDecimal getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(BigDecimal price) {
+//        this.price = price;
+//    }
 
     @ManyToOne
     public Category getCategory() {
@@ -65,4 +65,12 @@ public class Order extends BaseEntity{
         this.orderTime = orderTime;
     }
 
+    @Column(nullable = false)
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

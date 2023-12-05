@@ -47,3 +47,5 @@ public class UserServiceImplTestIT {
         assertEquals(userServiceModel.getEmail(), foundUser.getEmail());
     }
 }
+
+
