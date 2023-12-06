@@ -36,6 +36,3 @@ server:
     include-message: always
     include-stacktrace: always
   port: 8080
-
-
-
